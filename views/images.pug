@@ -1,0 +1,28 @@
+include layouts/main.pug
+block extra_css
+    link(rel='stylesheet', href='/css/images.css')
+block content
+    table(class='table')
+        tr
+            th
+                h1 Preview
+            th 
+                h1 Nombre
+            th 
+                h1 Url
+            th
+                h1 Cantidad
+        each file in files
+            tr
+                th
+                    img(src=file.previewPath, class='img-thumbnail img-preview')
+                th
+                    h2=file.file
+                th
+                    h2
+                        a(href=file.url target='_blank')=file.url
+                th
+                    h2=file.qty
+                    
+
+        
